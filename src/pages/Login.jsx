@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import api from "../api" // 👈 IMPORTA TU INSTANCIA CONFIGURADA (ajusta la ruta según tu estructura)
+import api from "../api/axios"
 export default function Login() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -27,7 +27,7 @@ export default function Login() {
     setLoading(true)
     
     try {
-      const res = await api.post("/api/auth/login", {
+      const res = await api.post("", {
         username,
         password
       })
