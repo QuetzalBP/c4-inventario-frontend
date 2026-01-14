@@ -72,7 +72,7 @@ export default function EditProduct() {
   const loadProduct = async () => {
     try {
       setLoading(true)
-      const res = await api.get(`/api/products/${id}`)
+      const res = await api.get(`/products/${id}`)
       setProduct(res.data)
     } catch (err) {
       console.error("Error al cargar producto:", err)
@@ -110,7 +110,7 @@ export default function EditProduct() {
         updatedAt: new Date().toISOString()
       }
       
-      await api.put(`/api/products/${id}`, productToUpdate)
+      await api.put(`/products/${id}`, productToUpdate)
       
       setSuccess("Producto actualizado exitosamente!")
       

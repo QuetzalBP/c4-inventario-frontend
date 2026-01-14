@@ -19,7 +19,7 @@ export default function ProductsTable() {
   const loadProducts = async () => {
     try {
       setLoading(true)
-      const res = await api.get("/api/products")
+      const res = await api.get("/products")
       setProducts(res.data)
     } catch (err) {
       console.error("Error al cargar productos:", err)
@@ -33,7 +33,7 @@ export default function ProductsTable() {
   const handleDelete = async (id, productName) => {
     if (window.confirm(`¿Estás seguro de que quieres eliminar el producto "${productName}"?`)) {
       try {
-        await api.delete(`/api/products/${id}`)
+        await api.delete(`/products/${id}`)
         // Actualizar la lista eliminando el producto
         setProducts(products.filter(product => product.id !== id))
         alert("Producto eliminado exitosamente")

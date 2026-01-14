@@ -41,7 +41,7 @@ export default function AddProduct() {
 
     try {
       const token = localStorage.getItem("token")
-      const response = await api.post("/api/products", product, {
+      const response = await api.post("/products", product, {
         headers: {
           Authorization: `Bearer ${token}`
         }

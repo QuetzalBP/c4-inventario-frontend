@@ -29,8 +29,8 @@ export default function Dashboard() {
     try {
       setLoading(true)
       const [productsRes, movementsRes] = await Promise.all([
-        api.get("/api/products"),
-        api.get("/api/movements").catch(() => ({ data: [] }))
+        api.get("/products"),
+        api.get("/movements").catch(() => ({ data: [] }))
       ])
       
       setProducts(productsRes.data)
@@ -129,7 +129,7 @@ export default function Dashboard() {
   const handleDelete = async (id) => {
     if (window.confirm("¿Estás seguro de que quieres eliminar este producto?")) {
       try {
-        await api.delete(`/api/products/${id}`)
+        await api.delete(`/products/${id}`)
         setProducts(products.filter(product => product.id !== id))
         alert("Producto eliminado exitosamente")
         loadData() // Recargar estadísticas

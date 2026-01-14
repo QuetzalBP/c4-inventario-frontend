@@ -13,7 +13,7 @@ export default function Products() {
   const loadProducts = async () => {
     try {
       setLoading(true)
-      const res = await api.get("/api/products")
+      const res = await api.get("/products")
       setProducts(res.data)
     } catch (err) {
       console.error("Error al cargar productos:", err)

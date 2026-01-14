@@ -23,8 +23,8 @@ export default function Reports() {
     try {
       setLoading(true)
       const [productsRes, movementsRes] = await Promise.all([
-        api.get("/api/products"),
-        api.get("/api/movements").catch(() => ({ data: [] }))
+        api.get("/products"),
+        api.get("/movements").catch(() => ({ data: [] }))
       ])
       
       setProducts(productsRes.data)
