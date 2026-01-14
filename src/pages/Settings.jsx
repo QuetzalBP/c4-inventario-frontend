@@ -47,7 +47,7 @@ export default function Settings() {
 
   const loadUsers = async () => {
     try {
-      const res = await api.get("/users").catch(() => ({ data: [] }))
+      const res = await api.get("/api/users").catch(() => ({ data: [] }))
       setUsers(res.data)
     } catch (err) {
       console.error("Error al cargar usuarios:", err)
@@ -56,7 +56,7 @@ export default function Settings() {
 
   const loadProducts = async () => {
     try {
-      const res = await api.get("/products")
+      const res = await api.get("/api/products")
       setProducts(res.data)
     } catch (err) {
       console.error("Error al cargar productos:", err)
@@ -81,7 +81,7 @@ export default function Settings() {
 
     try {
       setLoading(true)
-      await api.post("/users", newUser)
+      await api.post("/api/users", newUser)
       setSuccess("Usuario creado exitosamente")
       setNewUser({ username: "", password: "", role: "USER" })
       loadUsers()
@@ -102,7 +102,7 @@ export default function Settings() {
     if (window.confirm(`¿Estás seguro de eliminar al usuario "${username}"?`)) {
       try {
         setLoading(true)
-        await api.delete(`/users/${userId}`)
+        await api.delete(`/api/users/${userId}`)
         setSuccess("Usuario eliminado exitosamente")
         loadUsers()
       } catch (err) {
@@ -158,7 +158,7 @@ export default function Settings() {
         updateData.password = editForm.password
       }
 
-      await api.put(`/users/${userId}`, updateData)
+      await api.put(`/api/users/${userId}`, updateData)
       setSuccess("Usuario actualizado exitosamente")
       setEditingUser(null)
       loadUsers()
