@@ -131,8 +131,6 @@ export default function Dashboard() {
     // Estadísticas
     doc.setFontSize(12)
     doc.text(`Total Productos: ${stats.totalProducts}`, 14, 45)
-    doc.text(`Valor Total: $${stats.totalValue.toFixed(2)}`, 14, 55)
-    doc.text(`Productos con Bajo Stock: ${stats.lowStock}`, 14, 65)
     
     // Tabla de productos principales
     autoTable(doc, {
@@ -248,80 +246,6 @@ export default function Dashboard() {
               </p>
             </div>
 
-            {/* Valor Total */}
-            <div style={{
-              background: 'white',
-              borderRadius: '12px',
-              padding: '24px',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-              border: '1px solid #e5e7eb'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  background: '#dcfce7',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginRight: '12px'
-                }}>
-                  <span style={{ fontSize: '24px' }}>💰</span>
-                </div>
-                <div>
-                  <p style={{ margin: 0, fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>
-                    Valor Total
-                  </p>
-                  <h3 style={{ margin: '4px 0 0 0', fontSize: '32px', fontWeight: 'bold', color: '#166534' }}>
-                    ${stats.totalValue.toFixed(2)}
-                  </h3>
-                </div>
-              </div>
-              <p style={{ margin: 0, fontSize: '13px', color: '#6b7280' }}>
-                Valor total del inventario
-              </p>
-            </div>
-
-            {/* Bajo Stock */}
-            <div style={{
-              background: 'white',
-              borderRadius: '12px',
-              padding: '24px',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-              border: '1px solid #e5e7eb'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  background: stats.lowStock > 0 ? '#fee2e2' : '#f3f4f6',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginRight: '12px'
-                }}>
-                  <span style={{ fontSize: '24px' }}>⚠️</span>
-                </div>
-                <div>
-                  <p style={{ margin: 0, fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>
-                    Bajo Stock
-                  </p>
-                  <h3 style={{ 
-                    margin: '4px 0 0 0', 
-                    fontSize: '32px', 
-                    fontWeight: 'bold', 
-                    color: stats.lowStock > 0 ? '#dc2626' : '#6b7280'
-                  }}>
-                    {stats.lowStock}
-                  </h3>
-                </div>
-              </div>
-              <p style={{ margin: 0, fontSize: '13px', color: '#6b7280' }}>
-                Productos con menos de 10 unidades
-              </p>
-            </div>
 
             {/* Movimientos Hoy */}
             <div style={{
@@ -503,7 +427,6 @@ export default function Dashboard() {
                     <th style={{ padding: '12px', textAlign: 'left', fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>Marca</th>
                     <th style={{ padding: '12px', textAlign: 'left', fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>Modelo</th>
                     <th style={{ padding: '12px', textAlign: 'left', fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>Estado</th>
-                    <th style={{ padding: '12px', textAlign: 'left', fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>Valor Total</th>
                     <th style={{ padding: '12px', textAlign: 'left', fontSize: '14px', color: '#6b7280', fontWeight: '500' }}>Acciones</th>
                   </tr>
                 </thead>
