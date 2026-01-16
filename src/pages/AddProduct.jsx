@@ -305,57 +305,9 @@ export default function AddProduct() {
               </select>
             </div>
 
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ 
-                display: 'block', 
-                marginBottom: '5px',
-                fontWeight: '500',
-                color: '#374151'
-              }}>
-                Precio (MXN)
-              </label>
-              <input
-                type="number"
-                name="price"
-                value={product.price}
-                onChange={handleChange}
-                step="0.01"
-                min="0"
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
-                  fontSize: '14px'
-                }}
-                placeholder="0.00"
-              />
-            </div>
+            
 
-            <div style={{ marginBottom: '15px' }}>
-              <label style={{ 
-                display: 'block', 
-                marginBottom: '5px',
-                fontWeight: '500',
-                color: '#374151'
-              }}>
-                Ubicación
-              </label>
-              <input
-                type="text"
-                name="location"
-                value={product.location}
-                onChange={handleChange}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
-                  fontSize: '14px'
-                }}
-                placeholder="Ej: Almacén Principal, Oficina 3"
-              />
-            </div>
+            
           </div>
         </div>
 
@@ -412,61 +364,7 @@ export default function AddProduct() {
           />
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: '1fr 1fr',
-          gap: '20px',
-          marginBottom: '25px'
-        }}>
-          <div>
-            <label style={{ 
-              display: 'block', 
-              marginBottom: '5px',
-              fontWeight: '500',
-              color: '#374151'
-            }}>
-              Fecha de Compra
-            </label>
-            <input
-              type="date"
-              name="purchaseDate"
-              value={product.purchaseDate}
-              onChange={handleChange}
-              style={{
-                width: '100%',
-                padding: '10px',
-                border: '1px solid #d1d5db',
-                borderRadius: '6px',
-                fontSize: '14px'
-              }}
-            />
-          </div>
-
-          <div>
-            <label style={{ 
-              display: 'block', 
-              marginBottom: '5px',
-              fontWeight: '500',
-              color: '#374151'
-            }}>
-              Fin de Garantía
-            </label>
-            <input
-              type="date"
-              name="warrantyExpiry"
-              value={product.warrantyExpiry}
-              onChange={handleChange}
-              style={{
-                width: '100%',
-                padding: '10px',
-                border: '1px solid #d1d5db',
-                borderRadius: '6px',
-                fontSize: '14px'
-              }}
-            />
-          </div>
-        </div>
-
+        
         <div style={{ 
           display: 'flex', 
           gap: '15px',

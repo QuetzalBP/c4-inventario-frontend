@@ -182,7 +182,7 @@ export default function Reports() {
     
     autoTable(doc, {
       startY: 40,
-      head: [['Fecha', 'Hora', 'ID Prod.', 'Producto', 'Tipo', 'Estado', 'Usuario', 'Ubicacion']],
+      head: [['Fecha', 'Hora', 'ID Prod.', 'Producto', 'Tipo', 'Estado', 'Usuario']],
       body: tableData,
       styles: { fontSize: 8 },
       headStyles: { fillColor: [59, 130, 246] },
@@ -226,7 +226,7 @@ export default function Reports() {
     
     autoTable(doc, {
       startY: yPos + 5,
-      head: [['ID', 'Nombre', 'Marca', 'Modelo', 'Serie', 'Estado', 'Ubicacion', 'Usuario']],
+      head: [['ID', 'Nombre', 'Marca', 'Modelo', 'Serie', 'Estado', 'Usuario']],
       body: tableData,
       styles: { fontSize: 8 },
       headStyles: { fillColor: [34, 197, 94] },

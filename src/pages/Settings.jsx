@@ -180,9 +180,7 @@ export default function Settings() {
       'Número de Serie': p.serialNumber || '',
       'Estado': p.status,
       'Cantidad': p.quantity || 1,
-      'Precio': p.price || '',
       'Categoría': p.category || '',
-      'Ubicación': p.location || '',
       'Notas': p.notes || '',
       'Creado Por': p.createdBy || '',
       'Actualizado Por': p.updatedBy || '',
@@ -760,7 +758,7 @@ export default function Settings() {
             <p style={{ margin: '0 0 8px 0', fontWeight: '500' }}>ℹ️ Información del archivo:</p>
             <ul style={{ margin: 0, paddingLeft: '20px' }}>
               <li>Formato: Microsoft Excel (.xlsx)</li>
-              <li>Incluye: ID, nombre, descripción, marca, modelo, serie, estado, cantidad, precio, categoría, ubicación, usuarios y fechas</li>
+              <li>Incluye: ID, nombre, descripción, marca, modelo, serie, estado, cantidad, categoría, usuarios y fechas</li>
               <li>Compatible con Excel, Google Sheets y LibreOffice</li>
             </ul>
           </div>

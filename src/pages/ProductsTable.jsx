@@ -424,9 +424,6 @@ export default function ProductsTable() {
                       >
                         Estado{getSortIndicator('status')}
                       </th>
-                      <th style={{ padding: '12px 16px', textAlign: 'left' }}>
-                        Ubicación
-                      </th>
                       <th 
                         style={{ 
                           padding: '12px 16px', 

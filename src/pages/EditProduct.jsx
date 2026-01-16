@@ -655,32 +655,6 @@ export default function EditProduct() {
                 />
               </div>
               
-              <div>
-                <label style={{
-                  display: 'block',
-                  marginBottom: '6px',
-                  fontWeight: '500',
-                  color: '#374151'
-                }}>
-                  Precio (MXN)
-                </label>
-                <input
-                  type="number"
-                  name="price"
-                  value={product.price}
-                  onChange={handleChange}
-                  step="0.01"
-                  min="0"
-                  style={{
-                    width: '100%',
-                    padding: '10px 12px',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '4px',
-                    fontSize: '14px'
-                  }}
-                  placeholder="0.00"
-                />
-              </div>
               
               <div>
                 <label style={{

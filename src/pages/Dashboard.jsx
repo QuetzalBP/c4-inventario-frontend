@@ -80,16 +80,7 @@ export default function Dashboard() {
   }
 
   const calculateStats = (productsData, movementsData) => {
-    // Valor total del inventario
-    const totalValue = productsData.reduce((acc, prod) =>
-      acc + (parseFloat(prod.price) || 0) * (parseInt(prod.quantity) || 0), 0
-    )
-
-    // Productos con bajo stock
-    const lowStockProducts = productsData.filter(p => (p.quantity || 0) < 10).length
-
-    // Movimientos de hoy
-    const today = new Date().toDateString()
+   const today = new Date().toDateString()
     const todayMovements = movementsData.filter(m => {
       const mDate = new Date(m.createdAt)
       return mDate.toDateString() === today
@@ -106,24 +97,7 @@ export default function Dashboard() {
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
       .slice(0, 5)
 
-    // Productos más valiosos (top 5 por valor total)
-    const topProducts = productsData
-      .map(p => ({
-        ...p,
-        totalValue: (parseFloat(p.price) || 0) * (parseInt(p.quantity) || 0)
-      }))
-      .sort((a, b) => b.totalValue - a.totalValue)
-      .slice(0, 5)
-
-    setStats({
-      totalProducts: productsData.length,
-      totalValue,
-      lowStock: lowStockProducts,
-      todayMovements,
-      byStatus,
-      recentActivity,
-      topProducts
-    })
+    
   }
 
   const handleDelete = async (id) => {
@@ -163,12 +137,10 @@ export default function Dashboard() {
     // Tabla de productos principales
     autoTable(doc, {
       startY: 80,
-      head: [['Producto', 'Estado', 'Ubicación', 'Valor']],
+      head: [['Producto', 'Estado']],
       body: stats.topProducts.map(p => [
         p.name,
         p.status,
-        p.location || 'N/A',
-        `$${(parseFloat(p.price) || 0) * (parseInt(p.quantity) || 0)}`
       ]),
       styles: { fontSize: 10 }
     })

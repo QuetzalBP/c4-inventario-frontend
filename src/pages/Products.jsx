@@ -35,8 +35,6 @@ export default function Products() {
             <th style={{ padding: '10px', border: '1px solid #ddd' }}>ID</th>
             <th style={{ padding: '10px', border: '1px solid #ddd' }}>Nombre</th>
             <th style={{ padding: '10px', border: '1px solid #ddd' }}>Descripción</th>
-            <th style={{ padding: '10px', border: '1px solid #ddd' }}>Cantidad</th>
-            <th style={{ padding: '10px', border: '1px solid #ddd' }}>Precio</th>
             <th style={{ padding: '10px', border: '1px solid #ddd' }}>Categoría</th>
           </tr>
         </thead>
@@ -46,8 +44,6 @@ export default function Products() {
               <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.id}</td>
               <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.name}</td>
               <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.description}</td>
-              <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.quantity}</td>
-              <td style={{ padding: '10px', border: '1px solid #ddd' }}>${product.price}</td>
               <td style={{ padding: '10px', border: '1px solid #ddd' }}>{product.category}</td>
             </tr>
           ))}
